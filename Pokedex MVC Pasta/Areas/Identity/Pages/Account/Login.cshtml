@@ -1,0 +1,69 @@
+@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <title>Pokédex - Login</title>
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/login.css" rel="stylesheet" />
+</head>
+
+<body>
+    <form class="form-signin" method="post">
+        <div class="text-center mb-4">
+            <img class="mb-2" src="~/img/favicons/android-chrome-192x192.png" alt="Logo" width="100" height="100">
+            <h1 class="display-4 my-3">Pokédex</h1>
+            <p class="h5">Acesso a Área Administrativa</p>
+        </div>
+        <div asp-validation-summary="All" hidden></div>
+        <div class="form-label-group">
+            <input asp-for="Input.Email" class="form-control">
+            <label asp-for="Input.Email"></label>
+            <span asp-validation-for="Input.Password" class="text-white"></span>
+        </div>
+        <div class="form-label-group">
+            <input asp-for="Input.Password" class="form-control">
+            <label asp-for="Input.Password"></label>
+            <span asp-validation-for="Input.Password" class="text-white"></span>
+        </div>
+        <div class="checkbox mb-3">
+            <label>
+                <input asp-for="Input.RememberMe" /> @Html.DisplayNameFor(m => m.Input.RememberMe)
+            </label>
+        </div>
+        <button class="btn btn-lg btn-secondary btn-block" type="submit">Entrar</button>
+        <p class="mt-5 mb-3 text-white text-center">&copy; @DateTime.Now.Year</p>
+    </form>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript">
+        let mensagemErro = '';
+        $(".validation-summary-errors ul li").each(function() {
+            mensagemErro += $(this).text() + '<br/>';
+        });
+        if (mensagemErro != '')
+            swal.fire(
+                'Acesso Negado',
+                mensagemErro,
+                'error'
+            );
+    </script>
+</body>
+
+</html>

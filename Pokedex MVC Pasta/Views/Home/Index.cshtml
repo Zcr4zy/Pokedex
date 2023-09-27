@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Pokedex.Models.Pokemons>
+@{
+    ViewData["Title"] = "Home";
+}
+
+<section class="text-center container">
+    <div class="row py-md-5 py-sm-3">
+        <div class="col-lg-6 col md-8 mx-auto">
+            <h1 class="fw-light">POKÉDEX</h1>
+        </div>
+    </div>
+</section>
+
+<div class="pb-5">
+    <div class="container">
+        <p class="text-center tipo">
+            <a href="#" class="btn tipo-Água mr-2">Água</a>
+            <a href="#" class="btn tipo-Fogo mr-2">Fogo</a>
+            <a href="#" class="btn btn-secondary">Ver Todos</a>
+        </p>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+            <!--Cards dos Pokemons AQUI -->
+            @foreach (var pokemon in Model){
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <a asp-action="Details" asp-route-id="@pokemon.Id">
+                            <img src="@pokemon.Image" class="card-img-top" alt="@pokemon.Name">
+                            <div class="card-body">
+                                <p>Nº @pokemon.Id.ToString("000")</p>
+                                <h4 class="card-title">@pokemon.Name</h4>
+                                <div class="tipo mt-3">
+                                    @foreach (var type in pokemon.Types)
+                                    {
+                                        <a href="#" class="btn btn-sm tipo-@type.Type.Name">@type.Type.Name</a>
+                                    }
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+</div>
+</div>
+    

@@ -1,0 +1,95 @@
+﻿.card a {
+  text-decoration: none;
+  color: black;
+  }
+  .card img {
+  background-color: lightgray;
+  }
+  .card:hover {
+  border: 3px solid red;
+  transform: scale(1.2);
+  transition: 1s;
+  z-index: 1000;
+  }
+  .tipo a{
+  color:white;
+  }
+  .tipo a:hover{
+  color:white;
+  opacity: 0.80;
+  }
+  .tipo-Normal {
+  background-color: #aa9;
+  }
+  .tipo-Fogo {
+  background-color: #f42;
+  }
+  .tipo-Água {
+  background-color: #39f;
+  }
+  .tipo-Elétrico {
+  background-color: #fc3;
+  }
+  .tipo-Planta {
+  background-color: #7c5;
+  }
+  .tipo-Gelo {
+  background-color: #6cf;
+  }
+  .tipo-Lutador {
+  background-color: #b54;
+  }
+  .tipo-Venenoso {
+  background-color: #a59;
+  }
+  .tipo-Terra {
+  background-color: #db5;}
+  .tipo-Voador {
+  background-color: #89f;
+  }
+  .tipo-Psíquico {
+  background-color: #f59;
+  } 
+  .tipo-Inseto {
+  background-color: #ab2;
+  }
+  .tipo-Pedra {
+  background-color: #ba6;
+  }
+  .tipo-Fantasma {
+  background-color: #66b;
+  }
+  .tipo-Dragão {
+  background-color: #76e;
+  }
+  .tipo-Noturno {
+  background-color: #754;
+  }
+  .tipo-Metálico {
+  background-color: #aab;
+  }
+  .tipo-Fada {
+  background-color: #e9e;
+  }
+  label {
+  font-size: 20px;
+  }
+  .titulo {
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+  padding-right: 15px;
+  }
+  hr {
+  margin: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  }
+  .btn-outline-dark {
+  height: 75px;
+  display: inline-flex;
+  align-items: center;
+  }
+  footer a{
+  color: red;
+  }

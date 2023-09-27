@@ -1,0 +1,37 @@
+@model Pokedex.Models.Pokemons
+@{
+    ViewData["Title"] = "Pokemon";
+}
+
+<div class="container pb-2">
+    <div class="row">
+        <div class="col text-center mt-4 mb-2">
+            <h1>
+                <strong>@Model.Name.ToUpper()</strong>
+                <span class="text-muted">Nº @Model.Id.ToString("000")</span>
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <img class="img-fluid" src="@Url.Content("~/"+Model.Image)" alt="@Model.Name">
+        </div>
+        <div class="col-lg-6">
+            <label class="mt-5 text-justify">@Model.Description</label>
+            <hr>
+            <label class="titulo w-25">Altura</label><label>@Model.Height.ToString("N2") mt</label>
+            <hr>
+            <label class="titulo w-25">Peso</label><label>@Model.Weight.ToString("N3") kg</label>
+            <hr>
+            <div class="tipo mt-2">
+                <label class="titulo w-25">Tipo</label>
+                @foreach (var tipo in Model.Types)
+                {
+                    <a asp-action="Index" asp-route-tipo="@tipo.TypeId"
+                        class="btn btn-lg tipo-@tipo.Type.Name">@tipo.Type.Name</a>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Carlos Alexandre Alves Cunha">
+    <title>Pokédex</title>
+
+    <!-- Bootstrap core Css -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+    <!-- Favicons -->x
+    <link rel="apple-touch-icon" href="~/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="~/img/favicons/favicon-32x32.png" sizes ="32x32" type="image/img">
+    <link rel="icon" href="~/img/favicons/favicon-16x16.png" sizes ="16x16" type="image/img">
+    <link rel="icon" href="~/img/favicons/favicon.ico">
+
+    <link href="~/css/site.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="collapse bg-danger" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                        <h4 class="text-white">Sobre</h4>
+                        <p class="text-white">
+                            Projeto criado para demonstrar a criação de páginas WEB com .Net 5.
+                            Demonstra a criação de aplicações WEB com padrão MVC e banco de dados MySQL.
+                            Criação de páginas Dinâmicas e Área Administrativa.
+                        </p>
+                    </div>
+                    <div class="col-sm-4 offset-md-1 py-4">
+                        <h4 class="text-white">Contatos</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-white">Facebook</a></li>
+                            <li><a href="mailto:carlinhoscunhaig@gmail.com" class="text-white">Email</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar navbar-dark bg-danger shadow-sm">
+            <div class="container">
+                <a asp-action="Index" class="navbar-brand d-flex align-items-center">
+                    <img src="~/img/favicons/favicon-32x32.png" alt="Pokeball" class="me-2">&nbsp;
+                    <strong>POKÉDEX</strong>
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader"
+                        aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="mb-1">Pokédex - Versão Gallão da Massa</p>
+                    <p class="mb-0">
+                        Desenvolvido para as aulas de Programação Web da <a target="_blank"
+                        href="http://etecbarrabonita.com.br/">Etec Comendador Jõao Rays</a>
+                    </p>
+                </div>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                    class="bi bi-arrow-up-circle-fill" viewbox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
